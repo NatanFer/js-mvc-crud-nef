@@ -34,6 +34,7 @@ const handleSubmit = (event) => {
 //ADICIONAR NOVO USUARIO
 const addUser = (newUser) => {
   data.push(newUser);
+  dataService.salvarDados(data)
 };
 //ATUALIZAR USUARIO SELECIONADO
 const updateUser = (index, userToUpdate) => {
@@ -75,15 +76,23 @@ if (confirm){
 
   }
 };
-const controller = {
-  iniciar: () => {
-    viewController.build();
-    const form = document.getElementById("signForm");
+
+const setEvents =()=>{
+
+  const form = document.getElementById("signForm");
     form.addEventListener("submit", handleSubmit);
     const userList = document.getElementById("users-result");
     //ADICIONADO ESCUTADOR PARA CLIQUE ESQUERDO DENTRO DA TABELA DE USUARIOS
     userList.addEventListener("click", clickEsquerdo);
     userList.addEventListener("contextmenu", clickDireito);
+}
+
+
+
+const controller = {
+  run: () => {
+    viewController.build();
+setEvents();
     windows.onload = () =>{
       loadData();
     }
