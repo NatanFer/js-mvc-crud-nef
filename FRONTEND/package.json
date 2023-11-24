@@ -1,19 +1,16 @@
 {
-  "name": "mvc-project",
+  "name": "myfrontend",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Config do frontend da aplicação",
+  "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel --port 5050 --open chrome index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.10.2"
-  },
   "dependencies": {
-    "fs": "^0.0.1-security"
+      "parcel-bundler":"^1.6.1"
   }
 }
