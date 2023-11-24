@@ -85,18 +85,10 @@ const setEvents =()=>{
     //ADICIONADO ESCUTADOR PARA CLIQUE ESQUERDO DENTRO DA TABELA DE USUARIOS
     userList.addEventListener("click", clickEsquerdo);
     userList.addEventListener("contextmenu", clickDireito);
-}
-
-
-
-const controller = {
-  run: () => {
-    view.build();
-setEvents();
     windows.onload = () =>{
       loadData();
     }
-  },
-};
+  }
+;
 
 export { controller };
